@@ -1,0 +1,14 @@
+{
+  "name": "featurefy-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "concurrently: \"cd backend && npm start\" \"cd frontend && npm start\""
+  },
+  "author": "Kyle Muldoon",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
