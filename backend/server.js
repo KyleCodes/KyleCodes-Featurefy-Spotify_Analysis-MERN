@@ -1,5 +1,6 @@
-const express = require("express");
-const app = express(); // create express app
+const express = require("express")
+const app = express() // create express app
+const port = 8080
 
 
 app.get("/", (req, res) => {
@@ -7,6 +8,6 @@ app.get("/", (req, res) => {
 });
 
 // start express server on port 5000
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log("server started on port 8080");
 });
