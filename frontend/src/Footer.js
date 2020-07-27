@@ -6,38 +6,17 @@
 //     figure out how to pass reference of id="creator" into the fetch text function
 //         in order to update it once the asynchronous load completes.
 // */
-// export default function Footer() {
-//     return (
-//         <div id="Footer">
-//             <span id="creator">{}</span>
-//         </div>
-//     )
-// }
-
-import React, {Component} from 'react'
-import ReactDom from 'react-dom'
-
-class App extends React.Component {
-
-    constructor() {
-        super()
-        this.state = {data: ""}
-    }
-
-    componentDidMount() {
-        fetch("/testing")
-            .then(res => res.text)
-            .then(text => this.setState({data: text}))
-    }
 
 
-    render() {
-        return (
-            <div id="Footer">
-                <span id="creator">{toString(this.state.data)}</span>
-            </div>
-        )
-    }
+import React from 'react'
+import "./Footer.css"
+
+function Footer() {
+    return (
+        <div id="Footer">
+            <span id="creator">Made by Kyle Muldoon 2020</span>
+        </div>
+    )
 }
 
-export default App
+export default Footer
