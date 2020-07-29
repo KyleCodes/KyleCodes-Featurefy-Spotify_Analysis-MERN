@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 });
 
 app.get('/testing', (req, res) => {
-    res.send("React is communicating with Express now")
+    res.send("Frontend is now connected to backend.")
 })
 
 // start express server on port 5000
