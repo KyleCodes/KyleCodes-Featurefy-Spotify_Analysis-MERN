@@ -18,10 +18,10 @@ function Footer() {
     }, [])
 
     async function fetchText(url) {
-        let response = await fetch(url);
-        let data = await response.text();
-        console.log(data);
-        document.querySelector('#creator').textContent = data;
+        let response = await fetch(url)
+        let data = await response.text()
+        console.log(data)
+        document.querySelector('#creator').textContent = data
     }
 
     return (
