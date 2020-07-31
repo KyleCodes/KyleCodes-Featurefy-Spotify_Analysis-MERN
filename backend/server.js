@@ -2,6 +2,26 @@
   TODO: 
     - learn how to synchronously process certain requests (like getting authentication code)
     - learn middlewares (how to minimize junk code and reuse segments)
+
+  API FLOW: 
+    - user searches an artist name, server return list of artists
+    - user confirms the artist selection, server returns a list of albums
+    - user selects a list of albums, server returns each track from those albums.
+
+  API SPECS
+    - # Enter an artist in a string to get a list of possible results
+      # Returns a list of artist objects
+          function retrieve_artists(artist_name_string) => list of artists
+
+    - # Enter an artist ID to get a list of possible results
+      # Returns a list of album objects
+          function retrieve_albums_by_artist(artist_id_string) => list of albums belonging to artist
+
+    - # Enter a list of album IDs and get all of their songs + features
+      # Returns a data frame of feature objects representing all songs by an artist
+          function retrieve_songs_and_features(album_id_strings) => datastructure of songs and their track analysis
+
+      
 */
 
 
@@ -16,8 +36,6 @@ const spotifyAPI = new SpotifyWebApi({
   clientSecret: '5274969d76bb4006964b92076acc6194',
 })
 
-
-authorize_credentials()
 async function authorize_credentials() {
   try {
     let res = await spotifyAPI.clientCredentialsGrant()
@@ -30,16 +48,21 @@ async function authorize_credentials() {
 }
 
 let artist = 'rocky'
-search_artists(artist)
+let artist_list = search_artists(artist)
 async function search_artists(artist) {
   try {
+    console.log("Searching Artist: " + artist)
     await authorize_credentials()
     let res = await spotifyAPI.searchArtists(artist)
-    console.log(res.body.artists.items)
+    console.log(res.body.artists)
+    return res.body.artists.items
   } catch {
     console.error("Failed to search for artists")
+    return null
   }
 }
+
+let x = 0
 
 app.get("/", (req, res) => {
   res.send("This is from express.js");
