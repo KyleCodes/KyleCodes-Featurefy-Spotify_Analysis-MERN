@@ -23,7 +23,7 @@ const spotifyAPI = new SpotifyWebApi({
   clientSecret: '5274969d76bb4006964b92076acc6194',
 })
 
-const curr_sesh = {}
+const search_session = {}
 
 ///////////////////////////////////////////////////////////////
 //               SPOTIFY API WRAPPERS                        //
@@ -62,7 +62,6 @@ async function get_artist_list(artist_name) {
 
 // Given an artist id, returns a list of albums they have recorded
 async function get_album_list(artist_id) {
-
 
   try {
 
@@ -113,33 +112,33 @@ async function ex_pipeline() {
     await authorize()
 
     // Make a search request for ASAP Rocky
-    curr_sesh.search_query = "brand new"
-    curr_sesh.artist_list = await get_artist_list(curr_sesh.search_query)
+    search_session.search_query = "brand new"
+    search_session.artist_list = await get_artist_list(search_session.search_query)
 
     // Select A$ap Rocky from the group of returned artists
-    curr_sesh.artist = curr_sesh.artist_list[0]
+    search_session.artist = search_session.artist_list[0]
 
     // Get all albums recorded by ASAP, and isolate their album IDs
-    curr_sesh.artist_albums = await get_album_list(curr_sesh.artist.id)
-    curr_sesh.album_id_list = curr_sesh.artist_albums.map((album) => {return album.id})
+    search_session.artist_albums = await get_album_list(search_session.artist.id)
+    search_session.album_id_list = search_session.artist_albums.map((album) => {return album.id})
 
     // Get evry song belonging to each album on the list, and get the id of each song
-    curr_sesh.album_tracks = await Promise.all(curr_sesh.album_id_list.map(async (album_id) => {
+    search_session.album_tracks = await Promise.all(search_session.album_id_list.map(async (album_id) => {
       return (await get_album_tracks(album_id))
     }))
 
     // Finally, get the analysis features for each song
-    curr_sesh.album_tracks_ids = curr_sesh.album_tracks.map((album) => {
-      return album.items.map((track => {
+    search_session.album_tracks_ids = search_session.album_tracks.map((album) => {
+      return album.items.map((track) => {
         return track.id
-      }))
+      })
     })
 
-    curr_sesh.album_track_features = await Promise.all(curr_sesh.album_tracks_ids.map(async (album) => {
+    search_session.album_track_features = await Promise.all(search_session.album_tracks_ids.map(async (album) => {
       return (await get_features_for_tracks(album))
     }))
 
-    console.log("neuh" + curr_sesh.album_tracks)
+    console.log("neuh" + search_session.album_tracks)
     console.log("end of pipeline")
   
   } catch {
@@ -147,19 +146,12 @@ async function ex_pipeline() {
   }
 }
 
-async function nope() {}
-
-function noop() {}
 ///////////////////////////////////////////////////////////////
 //                     TEST BED                              //
 ///////////////////////////////////////////////////////////////
 
-
 ex_pipeline()
-
-
 console.log("done")
-
 
 ///////////////////////////////////////////////////////////////
 //                      ROUTING                              //
