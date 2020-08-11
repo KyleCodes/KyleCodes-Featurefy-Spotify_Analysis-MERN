@@ -136,7 +136,11 @@ app.get("/", (req, res) => {
 });
 
 app.get('/testing', (req, res) => {
-    res.send("Frontend is now connected to backend.")
+  res.send("Frontend is now connected to backend.")
+})
+
+app.get("/exdata", (req, res) => {
+  res.send(JSON.stringify(search_session))
 })
 
 // start express server on port 5000
