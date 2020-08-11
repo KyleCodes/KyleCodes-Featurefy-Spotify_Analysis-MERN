@@ -32,87 +32,62 @@ const search_session = {}
 // Authorization allows usage of Spotify's API
 async function authorize() {
   try {
-
     let res = await spotifyAPI.clientCredentialsGrant()
     let token = res.body['access_token']
     spotifyAPI.setAccessToken(token)
     console.log("New Token: " + token)
-
   } catch {
-
     console.error("Error in authorization")
-
   }
 }
 
 // Given a search string, returns a list of artists that 
 async function get_artist_list(artist_name) {
-
   try {
-
     let res = await spotifyAPI.searchArtists(artist_name)
     return res.body.artists.items
-
   } catch {
-    
     console.error("Error getting artist list")
-
   }
 }
 
 // Given an artist id, returns a list of albums they have recorded
 async function get_album_list(artist_id) {
-
   try {
-
     let res = await spotifyAPI.getArtistAlbums(artist_id)
     return res.body.items
-
   } catch {
-    
     console.error("Error getting artist albums")
-
   }
 }
 
 // Get all of the tracks that were on the specified album
 async function get_album_tracks(album_id_list) {
-
   try {
-
     let res = await spotifyAPI.getAlbumTracks(album_id_list)
     return res.body
-
   } catch {
-    
     console.error("Error getting album tracks")
-
   }
 }
 
 // Given a list of track ids, returns the audio features for each track
 async function get_features_for_tracks(track_ids) {
-
   try {
-
     let res = await spotifyAPI.getAudioFeaturesForTracks(track_ids)
     return res.body
-
   } catch {
-    
     console.error("error getting track features")
-
   }
 }
 
-async function ex_pipeline() {
-
+async function example_pipeline() {
   try {
     // Authorize communication with Spotify
     await authorize()
 
     // Make a search request for ASAP Rocky
-    search_session.search_query = "brand new"
+    search_session.search_query = "Asap Rocky"
     search_session.artist_list = await get_artist_list(search_session.search_query)
 
     // Select A$ap Rocky from the group of returned artists
@@ -150,7 +125,7 @@ async function ex_pipeline() {
 //                     TEST BED                              //
 ///////////////////////////////////////////////////////////////
 
-ex_pipeline()
+example_pipeline()
 console.log("done")
 
 ///////////////////////////////////////////////////////////////
