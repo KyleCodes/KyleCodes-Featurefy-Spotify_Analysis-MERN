@@ -1,0 +1,15 @@
+#SearchInterface {
+    background:#b3b3b3;
+
+    width: 80%;
+    height: 50%;
+    border-radius: 30px;
+    margin-top: 50px;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 300%;
+}
+

@@ -11,7 +11,8 @@
   "author": "Kyle Muldoon",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^5.2.0",
-    "dataframe-js": "^1.4.3"
+    "concurrently": "^5.3.0",
+    "dataframe-js": "^1.4.3",
+    "heroku": "^7.43.1"
   }
 }

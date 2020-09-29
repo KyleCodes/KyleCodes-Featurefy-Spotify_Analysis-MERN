@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Header.css"
-import Logo from "./spotify.png"
+import Logo from "../spotify.png"
 
 export default function Header() {
     return (

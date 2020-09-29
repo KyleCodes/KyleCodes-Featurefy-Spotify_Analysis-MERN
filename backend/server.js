@@ -1,7 +1,8 @@
 /*
   TODO: 
-    - learn how to synchronously process certain requests (like getting authentication code)
     - learn middlewares (how to minimize junk code and reuse segments)
+    - React-router-dom for routing in app.js
+    - Heroku (hosting / development / deployment)?
 
   API FLOW: 
     - user searches an artist name, server return list of artists
@@ -15,6 +16,10 @@
 
 const express = require("express")
 const SpotifyWebApi = require('spotify-web-api-node')
+
+
+
+
 const app = express() // create express app
 const port = 8080
 

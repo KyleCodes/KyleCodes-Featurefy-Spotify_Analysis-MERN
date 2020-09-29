@@ -1,0 +1,9 @@
+TODO
+
+
+-   build a design on paper for what the server will handle
+    and what the front end will handle 
+
+-   practice building simple react router funtionality in a 
+    new branch 
+
