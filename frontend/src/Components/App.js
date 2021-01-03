@@ -4,19 +4,17 @@ import Header from './Header.js'
 import Footer from './Footer.js'
 import PageContent from './PageContent'
 
-function App() {
+export default function App() {
   return (
     <div id="app">
-      <Header></Header>
-      <PageContent></PageContent>
-      <Footer></Footer>
-
+      <Header/>
+      <PageContent/>
+      <Footer/>
     </div>
   );
 }
 
-  
-export default App;
+
 
 
 

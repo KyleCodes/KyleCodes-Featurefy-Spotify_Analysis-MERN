@@ -18,8 +18,6 @@ const express = require("express")
 const SpotifyWebApi = require('spotify-web-api-node')
 
 
-
-
 const app = express() // create express app
 const port = 8080
 

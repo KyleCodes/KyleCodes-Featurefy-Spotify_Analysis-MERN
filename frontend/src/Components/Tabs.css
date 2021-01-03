@@ -1,0 +1,19 @@
+#tabBar {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #1db954;
+    font-size: 150%;
+}
+
+.tabBtn {
+    border-left: 2px #137c38 solid;
+    border-right: 2px #137c38 solid;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
