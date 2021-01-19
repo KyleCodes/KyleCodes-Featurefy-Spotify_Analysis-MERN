@@ -16,9 +16,14 @@
 
 const express = require("express")
 const SpotifyWebApi = require('spotify-web-api-node')
+const bodyParser = require('body-parser');
 
 
 const app = express() // create express app
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
 const port = 8080
 
 const spotifyAPI = new SpotifyWebApi({
@@ -47,6 +52,7 @@ async function authorize() {
 // Given a search string, returns a list of artists that 
 async function get_artist_list(artist_name) {
   try {
+    console.log("searching Artist: " + artist_name)
     let res = await spotifyAPI.searchArtists(artist_name)
     return res.body.artists.items
   } catch {
@@ -134,19 +140,31 @@ console.log("done")
 ///////////////////////////////////////////////////////////////
 //                      ROUTING                              //
 ///////////////////////////////////////////////////////////////
+
+// Not really used yet because no static routing
 app.get("/", (req, res) => {
   res.send("This is from express.js");
 });
 
-app.get('/testing', (req, res) => {
+// For displaying if dev servers are successfully connected
+app.get('/connStatus', (req, res) => {
   res.send("Frontend is now connected to backend.")
 })
 
+// Sends all tracks by ASAP rocky
 app.get("/exdata", (req, res) => {
   res.send(JSON.stringify(search_session))
 })
 
-// start express server on port 5000
+// Returns list of 5 artists for a given artist query string 
+app.get("/artistSearch", async (req, res) => {
+    console.log("received query string: " + req.query.artist)
+    let artistlist = await (await get_artist_list(req.query.artist)).slice(0,5)
+    console.log(artistlist)
+    res.send(JSON.stringify(artistlist))
+})
+
+// start express server on port 
 app.listen(port, () => {
   console.log("server started on port 8080");
 });

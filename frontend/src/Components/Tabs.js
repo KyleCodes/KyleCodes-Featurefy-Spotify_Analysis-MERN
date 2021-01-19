@@ -1,27 +1,27 @@
 import React from 'react'
 import './Tabs.css'
 
-export default function Tabs() {
+
+export default function Tabs(props) {
     
-    // function handleTabHover
-    
-    
-    
+    const handleTabClick = props.handleTabClick
+
+        
     return (
         <div id="tabBar">
-            <div className="tabBtn">
+            <div id="search_tab" className="tabBtn" onClick={(e) => handleTabClick(e.target.id)}>
                 Search
             </div>  
 
-            <div className="tabBtn">
+            <div id="history_tab" className="tabBtn" onClick={(e) => handleTabClick(e.target.id)}>
                 Listening History
             </div>
 
-            <div className="tabBtn">
+            <div id="playlists_tab" className="tabBtn" onClick={(e) => handleTabClick(e.target.id)}>
                 Playlists
             </div>  
 
-            <div className="tabBtn">
+            <div id="friends_tab" className="tabBtn" onClick={(e) => handleTabClick(e.target.id)}>
                 Friends
             </div>                
         </div>

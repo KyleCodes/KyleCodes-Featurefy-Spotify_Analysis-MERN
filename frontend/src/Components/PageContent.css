@@ -1,4 +1,4 @@
-#ViewWindow {
+#InteractionWindow {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -6,4 +6,23 @@
     align-items: center;
     height: 100%;
     background-color: #232323;
+}
+
+#QuerySearchBox {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.query_analysis_panels {
+    background-color: #DDD;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin: 20px;
+    border-radius: 10px;
 }

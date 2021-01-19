@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Header.css"
-// import Logo from "../spotify.png"
 
+// HEADER CONTAINS WEBSITE LOGO, TITLE, AND LOGIN AREA (NOT YET)
 export default function Header() {
     return (
         <div id="Header">

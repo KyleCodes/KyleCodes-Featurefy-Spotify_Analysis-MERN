@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import "./Footer.css"
 
-function Footer() {
+// USED FOR DISPLAYING ONE LINE CONNECTION STATUS AT THE BOTTOM OF THE PAGE
+export default function Footer() {
 
     const [message, setMessage] = useState([])
 
     useEffect(() => {
-        fetchText("/testing")
+        fetchText("/connStatus")
     }, [])
 
     async function fetchText(url) {
@@ -22,5 +23,3 @@ function Footer() {
         </div>
     )
 }
-
-export default Footer

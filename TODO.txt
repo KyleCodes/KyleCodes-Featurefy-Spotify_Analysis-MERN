@@ -7,3 +7,4 @@ TODO
 -   practice building simple react router funtionality in a 
     new branch 
 
+-   figure out url encoding for sending queries in get requests
