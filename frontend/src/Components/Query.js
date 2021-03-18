@@ -10,7 +10,7 @@ export default function Query() {
     
     // handler fires on each char input to artist text box, sets artist search state
     function handleArtistSearchInput(artistTextContent) {
-        console.log(artistTextContent)
+        console.log("artist query: " + artistTextContent)
         setArtistSearch(artistTextContent)
     }
 
@@ -39,13 +39,26 @@ export default function Query() {
     useEffect(() => {
         console.log("QUERIED ARTISTS: ")
         console.log(artistList)
+ 
+        if (artistList != null) {
+            document.querySelector("#results").innerHTML = artistList.map((artist) => {
+                return artist.name
+            })
+        }
+
     }, [artistList])
 
     return (
-        <div className="query_analysis_panels">
-            <input type="text" placeholder="Search for an Artist" onInput={(e) => handleArtistSearchInput(e.target.value)}>
-            </input>
+        <div id="queryWindow" className="query_analysis_panels">
+            <input  id="artistQueryBox"
+                    type="text" 
+                    placeholder="Search for an Artist" 
+                    onChange={(e) => handleArtistSearchInput(e.target.value)} 
+            />
 
+            <div id="results">
+
+            </div>
         </div>
     )
 }
