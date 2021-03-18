@@ -5,4 +5,4 @@ This application will allow the user to select large collections of music, such 
 The idea behind this app is to visually show listeners new insights about their favorite music, and use these insights to find similar music. 
 
 
-![screenshot](./screencap.png)
+![screenshot](./screenshot.png)
