@@ -1,5 +1,5 @@
 import React from 'react'
-import './Analysis.css'
+import './../../styling/Analysis.css'
 
 export default function Analysis() {
     return (

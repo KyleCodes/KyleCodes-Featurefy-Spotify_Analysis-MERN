@@ -122,7 +122,7 @@ async function example_pipeline() {
       return (await get_features_for_tracks(album))
     }))
 
-    console.log("neuh" + search_session.album_tracks)
+    console.log("neuh\n" + JSON.stringify(search_session.album_id_list, null, 2))
     console.log("end of pipeline")
   
   } catch {

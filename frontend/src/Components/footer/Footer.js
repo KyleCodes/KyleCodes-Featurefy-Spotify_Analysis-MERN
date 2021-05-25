@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import "./Footer.css"
+import "./../../styling/Footer.css"
 
 // USED FOR DISPLAYING ONE LINE CONNECTION STATUS AT THE BOTTOM OF THE PAGE
 export default function Footer() {

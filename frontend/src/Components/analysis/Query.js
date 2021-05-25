@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import './Query.css'
+import './../../styling/Query.css'
 
 export default function Query() {
 
