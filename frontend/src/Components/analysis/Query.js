@@ -1,7 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import './../../styling/Query.css'
 
+import {queryArtistNames} from './../../actions/search_actions'
+
+
+import {useSelector, useDispatch} from 'react-redux'
+
 export default function Query() {
+
+
+    const dispatch = useDispatch()
+    const data = useSelector(state => state.search)
 
     //////////////////////////////////////
     // State + functions relating to artist search input field
@@ -11,6 +20,9 @@ export default function Query() {
     // handler fires on each char input to artist text box, sets artist search state
     function handleArtistSearchInput(artistTextContent) {
         console.log("artist query: " + artistTextContent)
+        
+        dispatch(queryArtistNames(artistTextContent))
+        
         setArtistSearch(artistTextContent)
     }
 
@@ -40,9 +52,11 @@ export default function Query() {
         console.log("QUERIED ARTISTS: ")
         console.log(artistList)
  
+
+
         if (artistList != null) {
             document.querySelector("#results").innerHTML = artistList.map((artist) => {
-                return artist.name
+                return (`<p>${artist}</p>`)
             })
         }
 

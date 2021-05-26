@@ -19,10 +19,13 @@ const SpotifyWebApi = require('spotify-web-api-node')
 const bodyParser = require('body-parser');
 
 
+
 const app = express() // create express app
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+var cors = require('cors')
+app.use(cors())
 
 const port = 8080
 
