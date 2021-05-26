@@ -1,4 +1,4 @@
-import {exDataRetreiveTool, artistNameQueryTool} from './../util/search_api_util'
+import {exDataRetreiveTool, artistNameQueryTool, artistSelectionDataGatheringTool} from './../util/search_api_util'
 
 export const RECEIVE_TEST_DATA = 'RECEIVE_TEST_DATA'
 export const QUERY_ARTISTS_NAMES = 'QUERY_ARTISTS_NAMES'
@@ -22,3 +22,7 @@ export const retrieveExampleData = () => dispatch => exDataRetreiveTool()
 
 export const queryArtistNames = (artistNameInput) => dispatch => artistNameQueryTool(artistNameInput)
     .then( response => dispatch(getArtistNames(response.data)) )
+
+
+// export const selectArtist = (artistSelection) => dispatch => artistSelectionDataGatheringTool(artistSelection)
+//     .then( response => dispatch(getArtistInfo(response.data)))

@@ -2,8 +2,8 @@ import React from 'react';
 import './../styling/App.css';
 import Header from './header/Header.js' 
 import Footer from './footer/Footer.js'
-// import PageContent from './PageContent'
-import Query from './analysis/Query'
+
+
 import Playground from './Playground'
 
 import { Provider } from 'react-redux'

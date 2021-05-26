@@ -5,5 +5,9 @@ export const exDataRetreiveTool = () => {
 }
 
 export const artistNameQueryTool = (artistNameInput) => {
-    return axios.get('http://localhost:8080/artistSearch?artist='.concat(artistNameInput))
+    return axios.get(`http://localhost:8080/artistSearch?artist=${artistNameInput}`)
+}
+
+export const artistSelectionDataGatheringTool = (artistSelection) => {
+    return 
 }

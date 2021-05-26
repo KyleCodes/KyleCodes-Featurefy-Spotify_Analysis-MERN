@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-import Query from './analysis/Query'
+import Query from './analysis/search_analysis/Query'
 
 import {useSelector, useDispatch} from 'react-redux'
 import {retrieveExampleData} from './../actions/search_actions'
