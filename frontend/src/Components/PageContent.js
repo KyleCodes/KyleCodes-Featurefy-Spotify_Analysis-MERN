@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import './PageContent.css'
-import Tabs from './Tabs'
-import Query from './Query.js'
-import Analysis from './Analysis.js'
+import './../styling/PageContent.css'
+import Tabs from './header/Tabs'
+import Query from './analysis/search_analysis/Query'
+import Analysis from './analysis/Analysis.js'
 
 // PAGECONTENT IS FOR USER INTERACTION. IT IS THE MEAT AND BONES OF THE WEBAPP
 // IT IS USED FOR USER TO SET UP QUERIES AND VIEW THE ANALYSIS OF THEM

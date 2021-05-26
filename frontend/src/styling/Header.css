@@ -1,4 +1,10 @@
-#Header {
+#header {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#header-banner {
     color: white;
     background: #121212;
     padding: 10px;

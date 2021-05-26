@@ -19,10 +19,13 @@ const SpotifyWebApi = require('spotify-web-api-node')
 const bodyParser = require('body-parser');
 
 
+
 const app = express() // create express app
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+var cors = require('cors')
+app.use(cors())
 
 const port = 8080
 
@@ -122,7 +125,7 @@ async function example_pipeline() {
       return (await get_features_for_tracks(album))
     }))
 
-    console.log("neuh" + search_session.album_tracks)
+    console.log("neuh\n" + JSON.stringify(search_session.album_id_list, null, 2))
     console.log("end of pipeline")
   
   } catch {

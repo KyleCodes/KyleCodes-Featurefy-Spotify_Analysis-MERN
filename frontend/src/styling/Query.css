@@ -1,0 +1,32 @@
+
+#queryWindow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #DDD;
+    height: auto;
+    width: 50%;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+}
+
+.artistName {
+    height: 30px;
+    width: 300px;
+    border: 1px solid black;
+    margin-top: -1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.artistName:hover {
+    background-color: #137c38;
+}

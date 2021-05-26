@@ -1,5 +1,5 @@
 import React from 'react'
-import './Tabs.css'
+import './../../styling/Tabs.css'
 
 
 export default function Tabs(props) {
