@@ -10,7 +10,6 @@
   "author": "Kyle Muldoon",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "datalib": "^1.9.3",
     "dotenv": "^8.2.0",

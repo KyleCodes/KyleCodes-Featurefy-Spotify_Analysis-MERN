@@ -13,20 +13,9 @@ export default function Playground() {
     const data = useSelector(state => state.search)
     
 
-    useEffect( () => {
-        dispatch(retrieveExampleData())
-    }, [])
-    
-    const handleClick = () => {
-        dispatch(retrieveExampleData())
-        console.log("EX DATA")
-        console.log(data)
-    }
-
     return (
         <div id='playground'>
-            {/* <button onClick={() => {handleClick()}}>get ex data</button> */}
-
+            
             <Query />
             
         </div>
