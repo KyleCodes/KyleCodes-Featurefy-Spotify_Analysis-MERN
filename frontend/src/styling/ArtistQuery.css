@@ -1,5 +1,5 @@
 
-#queryWindow {
+.interactionWindow {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -16,16 +16,6 @@
     flex-direction: column;
 }
 
-.artistName {
-    height: 30px;
-    width: 300px;
-    border: 1px solid black;
-    margin-top: -1px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
 .artistName:hover {
     background-color: #137c38;

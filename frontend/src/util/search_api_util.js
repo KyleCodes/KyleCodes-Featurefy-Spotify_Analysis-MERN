@@ -8,6 +8,6 @@ export const artistNameQueryTool = (artistNameInput) => {
     return axios.get(`http://localhost:8080/api/artistSearch?artist=${artistNameInput}`)
 }
 
-export const artistSelectionDataGatheringTool = (artistSelection) => {
-    return 
+export const artistSelectionAlbumGatheringTool = (artistId) => {
+    return axios.get(`http://localhost:8080/api/artistAlbums?artistId=${artistId}`)
 }

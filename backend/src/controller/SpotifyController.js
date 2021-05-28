@@ -28,16 +28,21 @@ router.get('/connStatus', (req, res) => {
 })
 
 // Sends all tracks by ASAP rocky
-router.get("/exdata", async (req, res) => {
+router.get('/exdata', async (req, res) => {
   let exData = await SpotifyService.example_pipeline()
   res.send(exData)
-
 })
 
-// Returns list of 5 artists for a given artist query string 
-router.get("/artistSearch", async (req, res) => {
-    let artistList = await SpotifyService.get_artist_list(req.query.artist)
-    res.send(artistList)
+// Returns list of artists for a given artist query string 
+router.get('/artistSearch', async (req, res) => {
+  let artistList = await SpotifyService.get_artist_list(req.query.artist)
+  res.send(artistList)
+})
+
+//
+router.get('/artistAlbums', async (req, res) => {
+  let artistInfo = await SpotifyService.get_album_list(req.query.artistId)
+  res.send(artistInfo)
 })
 
 module.exports = router

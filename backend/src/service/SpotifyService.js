@@ -30,7 +30,7 @@ module.exports.get_artist_list = async (artist_name) => {
     try {
         console.log("searching Artist: " + artist_name)
         let res = await spotifyAPI.searchArtists(artist_name)
-        return res.body.artists.items
+        return res.body.artists.items.slice(0,10)
     } catch {
         console.error("Error getting artist list")
     }
@@ -40,7 +40,8 @@ module.exports.get_artist_list = async (artist_name) => {
 module.exports.get_album_list = async (artist_id) => {
     try {
         let res = await spotifyAPI.getArtistAlbums(artist_id)
-        return res.body.items
+        return res.body.items.filter( (album) => album.album_type === 'album' )
+            .filter( (album, index, self) => self.findIndex(temp => (temp.name === album.name)) === index )
     } catch {
         console.error("Error getting artist albums")
     }
@@ -65,6 +66,7 @@ module.exports.get_features_for_tracks = async (track_ids) => {
         console.error("error getting track features")
     }
 }
+
 
 ///////////////////////////////////////////////////////////////
 //               EXAMPLE PIPELINE                            //

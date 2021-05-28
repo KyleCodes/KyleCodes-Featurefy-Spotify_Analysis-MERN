@@ -1,0 +1,30 @@
+.artistName {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.artistImage {
+    height: 120px;
+    width: auto;
+}
+
+.artistInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.artistTitle {
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 8px;
+}
+
+.infoItem {
+    margin-bottom: 5px;
+}

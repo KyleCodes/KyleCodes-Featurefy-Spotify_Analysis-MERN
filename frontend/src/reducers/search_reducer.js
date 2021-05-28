@@ -1,9 +1,13 @@
-import {RECEIVE_TEST_DATA, QUERY_ARTISTS_NAMES} from './../actions/search_actions'
+import {RECEIVE_TEST_DATA, QUERY_ARTISTS_NAMES, GET_ARTIST_ALBUMS} from './../actions/search_actions'
 
 
 const initialState = {
     exampleData: {},
-    queriedArtistList: {}
+    queriedArtistList: [],
+    selectedArtist: {
+        albums: []
+    }
+
 }
 
 const searchReducer = (prevState = initialState, action) => {
@@ -17,6 +21,11 @@ const searchReducer = (prevState = initialState, action) => {
 
         case QUERY_ARTISTS_NAMES:
             nextState.queriedArtistList = action.payload
+            return nextState
+
+
+        case GET_ARTIST_ALBUMS:
+            nextState.selectedArtist.albums = action.payload
             return nextState
 
         default:

@@ -7,7 +7,7 @@ export default function Footer() {
     const [message, setMessage] = useState([])
 
     useEffect(() => {
-        fetchText("/connStatus")
+        fetchText("/api/connStatus")
     }, [])
 
     async function fetchText(url) {

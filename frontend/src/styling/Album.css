@@ -1,0 +1,47 @@
+.album {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+.albumImage {
+    height: 120px;
+    width: auto;
+}
+
+
+.albumInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.albumTitle {
+    font-weight: bold;
+    font-size: 120%;
+    margin-bottom: 8px;
+}
+
+.artists {
+    display: flex;
+    flex-direction: row;
+}
+
+.artistListContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.albumArtist {
+    margin-left: 5px;
+
+}
+
+.infoItem {
+    margin-bottom: 5px;
+}
